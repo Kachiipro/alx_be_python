@@ -1,5 +1,5 @@
 # This script will ask the user about the current weather conditions and provide clothing recommendations based on the input.
-weather = input("What's the weather like today? (sunny/rainy/cold)")
+weather = input("What's the weather like today? (sunny/rainy/cold):")
 weather_input = weather.lower()
 sunny = "Wear a t-shirt and sunglasses"
 rainy = "Don't forget your umbrella and a raincoat"
