@@ -10,5 +10,5 @@ def perform_operation(num1, num2, operation):
     elif operation == "divide":
         return num1 / num2  
     else:
-         print("Invalid operation. Please choose (add, subtract, multiply, divide):")
+         return "Invalid operation. Please choose (add, subtract, multiply, divide)"
 
