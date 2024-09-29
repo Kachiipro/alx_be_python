@@ -20,5 +20,5 @@ elif unit == "F" :
      result = convert_to_celsius(fahrenheit)
      print(f"{fahrenheit}°F is {result}°C")
 else:
-     print(f"{unit} Not a valid temprature unit")
+     print(f"{temperature}°{unit} Invalid temperature. Please enter a numeric value.")
      
