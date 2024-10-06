@@ -6,25 +6,23 @@ class Book:
         self.author = author
         self._is_checked_out = False
 
+    def is_available(self):
+        """Checks if the book is available."""
+        return not self._is_checked_out
+
     def is_checkout(self):
         self._is_checked_out = True
 
-    def is_return(self):
+    def return_book(self):
         self._is_checked_out = False
 
 
-class Library(Book):
+class Library:
     def __init__(self):
         self._books = []
 
     def add_book(self, book):
         self._books.append(book)
-
-    def list_available_books(self):
-
-        for i in self._books:
-            if i._is_checked_out == False:
-                print(f"{i.title} by {i.author}")
 
     def check_out_book(self, title):
         for i in self._books:
@@ -33,13 +31,19 @@ class Library(Book):
                     i.is_checkout()
                 else:
                     print(f"{title} is already checked out.")
-        print(f"{i.title} is not in the library")
 
-    def return_book(self):
+    def return_book(self, title):
         for i in self._books:
             if i.title == title:
                 if i._is_checked_out == True:
-                    i.is_return()
+                    i.return_book()
                 else:
-                    print(f"{title} is already returned.")
-        print(f"{i.title} is not in the library")
+                    return f"{title} is already returned."
+
+    def list_available_books(self):
+        available_books = [book for book in self._books if book.is_available()]
+        if available_books:
+            for book in available_books:
+                print(f"{book.title} by {book.author}")
+        else:
+            print("No books are available.")
