@@ -12,9 +12,3 @@ class Book:
 
     def __repr__(self):
         return f"Book('{self.title}', '{self.author}', {self.year})"
-
-
-book = Book("tale of dawn", "john stark", 2003)
-print(book)
-print(repr(book))
-del book
